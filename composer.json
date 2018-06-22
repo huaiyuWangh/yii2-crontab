@@ -1,0 +1,26 @@
+{
+    "name": "yii2crontab/crontab",
+    "description": "Yii2 Crontab ",
+    "keywords": ["yii2", "redis", "crontab"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/huaiyuWangh/yii2-crontab/issues",
+        "forum": "https://blog.csdn.net/why2142250",
+        "source": "https://github.com/huaiyuWangh/yii2-crontab"
+    },
+    "authors" : {
+        "name": "wanghuaiyu",
+        "email": "15574992541@163.com"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "yii2crontab\\crontab\\": "src/"
+        }
+    }
+}

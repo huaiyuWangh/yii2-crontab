@@ -1,0 +1,23 @@
+#!/usr/bin/php
+<?php
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+defined('IS_MASTER') or define('IS_MASTER', 0);
+defined('CRONTAB_ROOT') or define('CRONTAB_ROOT', __DIR__);
+defined('CRONTAB_LOG') or define('CRONTAB_LOG', __DIR__ . '/runtime/logs/');
+defined('YII_FRAMEWORK') or define('YII_FRAMEWORK', __DIR__ . '/../yii-framework/');
+
+require(YII_FRAMEWORK . 'vendor/autoload.php');
+require(YII_FRAMEWORK . 'vendor/yiisoft/yii2/Yii.php');
+
+$config = yii\helpers\ArrayHelper::merge(
+    require(YII_FRAMEWORK . 'common/config/console.php'),
+    require(YII_FRAMEWORK . 'common/config/console-local.php'),
+    require(__DIR__ . '/config/console.php'),
+    require(__DIR__ . '/config/console-local.php')
+);
+
+$application = new yii\console\Application($config);
+$exitCode = $application->run();
+exit($exitCode);
